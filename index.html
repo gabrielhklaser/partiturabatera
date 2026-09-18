@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DrumScribe · transcritor de bateria</title>
+<style>
+/* Estado inicial autossuficiente, dentro do documento. #busy é um véu full-screen
+   (position:fixed; inset:0; z-index:60): se um .css em cache anular o efeito de [hidden], ele
+   cobre a interface inteira e engole todos os cliques antes de qualquer JS rodar — foi exatamente
+   assim que a plataforma ficou inutilizável uma vez. Estas linhas viajam com o HTML, então não
+   podem divergir dele. */
+[hidden]{display:none!important}
+#busy{display:none}
+</style>
+<link rel="stylesheet" href="static/style.css?v={{VER}}">
+</head>
+<body>
+<div class="offline" id="offline" hidden role="alert">
+  <b>não consigo falar com o servidor</b>
+  <span class="mono" id="offline-why">sem resposta</span>
+  <span class="offline-how">no terminal da pasta do projeto:
+    <code>./run.sh</code> <small>(instala o que faltar e sobe na porta 8000)</small></span>
+  <button class="btn small" id="offline-retry" type="button">tentar de novo</button>
+</div>
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+      <circle cx="16" cy="13" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M6 13h20M16 23v6M11 29h10" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <path d="M22 4l6 3-6 3" stroke="currentColor" stroke-width="1.6" fill="none"/>
+    </svg>
+    <div>
+      <h1>DrumScribe</h1>
+      <p>partitura de bateria a partir de um áudio isolado · <span class="mono">análise espectral transparente</span></p>
+    </div>
+  </div>
+  <nav class="steps" id="steps">
+    <button class="step active" data-tab="score">Partitura</button>
+    <button class="step" data-tab="editor">Corrigir</button>
+    <button class="step" data-tab="audio">Áudio &amp; batidas</button>
+    <button class="step" data-tab="midi">MIDI<span class="badge" id="midi-badge" hidden></span></button>
+    <button class="step" data-tab="relatorio">Relatório</button>
+    <button class="step" data-tab="auditoria">Auditoria<span class="badge" id="qa-badge" hidden></span></button>
+  </nav>
+</header>
+
+<main>
+  <!-- ------------------------------------------------------ coluna de controles -->
+  <aside class="panel controls">
+    <section>
+      <h2>1 · Áudio</h2>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a,.aiff">
+        <span class="drop-inner">
+          <b>solte o arquivo aqui</b>
+          <small>MP3 / WAV / FLAC · bateria isolada funciona melhor</small>
+        </span>
+      </label>
+      <div class="row gap">
+        <button id="btn-demo" class="ghost">usar demonstração</button>
+        <button id="btn-run" class="primary" disabled>transcrever</button>
+      </div>
+      <p class="file-name mono" id="fname">nenhum arquivo</p>
+    </section>
+
+    <section>
+      <h2>2 · Análise</h2>
+      <label class="fld">
+        <span>sensibilidade dos onsets <em id="v-sens">0,95</em></span>
+        <input type="range" id="sens" min="0.60" max="1.40" step="0.01" value="0.95">
+      </label>
+      <label class="fld">
+        <span>confiança mínima <em id="v-minc">0,30</em></span>
+        <input type="range" id="minc" min="0.15" max="0.80" step="0.01" value="0.30">
+      </label>
+      <div class="grid2">
+        <label class="fld"><span>grade</span>
+          <select id="grid">
+            <option value="auto">auto (16ºs se houver evidência)</option>
+            <option value="8th">8ºs (colcheias)</option>
+            <option value="16th">16ºs (seminocolcheias)</option>
+            <option value="32nd+16th">16ºs + 32ºs</option>
+            <option value="16th+triplet">16ºs + tercinas</option>
+          </select></label>
+        <label class="fld"><span>compasso</span>
+          <select id="meter">
+            <option value="auto">auto</option><option>2/4</option><option>3/4</option>
+            <option selected>4/4</option><option>5/4</option><option>6/8</option>
+            <option>9/8</option><option>12/8</option>
+          </select></label>
+        <label class="fld"><span>BPM (0 = auto)</span>
+          <input type="number" id="bpm" value="0" min="0" max="300" step="0.1"></label>
+        <label class="fld"><span>swing</span>
+          <select id="swing"><option value="auto">auto</option><option value="0">reto</option>
+            <option value="0.60">leve (0,60)</option><option value="0.67">médio (0,67)</option>
+            <option value="0.72">arrastado (0,72)</option></select></label>
+      </div>
+      <label class="fld"><span>deslocamento da barra (ticks de 16º) — desempata “bumbo no
+        1” vs “bumbo no 3” <em id="v-dbeat">0</em></span>
+        <input type="range" id="dbeat" min="-16" max="16" step="2" value="0"></label>
+      <label class="chk"><input type="checkbox" id="aux"> peças auxiliares (cross-stick, pedal, splash, cowbell)</label>
+      <label class="chk"><input type="checkbox" id="fill" checked> detectar viradas e compassos de repetição</label>
+      <div class="row gap">
+        <button id="btn-tune" class="ghost" title="varre a faixa e mede qual par de parâmetros deixa menos duplicata e menos nota fora do pulso">recomendar parâmetros</button>
+        <span class="mono small" id="tune-st"></span>
+      </div>
+      <div id="tune-out" class="tune-out" hidden></div>
+    </section>
+
+    <section id="sec-export">
+      <h2>3 · Exportar</h2>
+      <div class="exports">
+        <button data-fmt="pdf" class="primary">PDF</button>
+        <button data-fmt="svg">SVG</button>
+        <button data-fmt="musicxml">MusicXML</button>
+        <button data-fmt="mid">MIDI</button>
+        <button data-fmt="json">JSON</button>
+        <button data-fmt="csv">CSV</button>
+      </div>
+      <p class="hint">PDF/SVG usam a mesma gravura da tela. MusicXML abre no MuseScore; MIDI
+        sai no canal 10 (GM) para tocar na sua DAW.</p>
+    </section>
+    <p class="status" id="status">pronto — escolha um arquivo.</p>
+  </aside>
+
+  <!-- ------------------------------------------------------------- coluna principal -->
+  <section class="panel work">
+    <div class="toolbar">
+      <div class="play">
+        <button id="btn-play" class="icon" title="tocar / pausar (espaço)">▶</button>
+        <button id="btn-synth" class="icon" title="ouvir a partitura transcrita">🎛</button>
+        <span class="mono" id="timecode">0,00 s</span>
+        <label class="vol"><input type="range" id="vol" min="0" max="1" step="0.01" value="0.9"></label>
+        <label class="chk inline"><input type="checkbox" id="met" checked> marcar batidas</label>
+        <label class="chk inline" title="a partitura desce sozinha acompanhando o compasso tocado"><input type="checkbox" id="follow" checked> seguir o compasso</label>
+        <span class="mono cur-read" id="cur-read" title="compasso sob o cursor de reprodução"></span>
+      </div>
+      <div class="pres" id="pres" title="ocultar é apresentação: os dados, o JSON/CSV e a auditoria continuam com tudo">
+        <button class="ghost small pres-b active" id="pres-full" type="button">completa</button>
+        <button class="ghost small pres-b" id="pres-simple" type="button">simples</button>
+        <label class="chk inline"><input type="checkbox" id="pres-pratos"> pratos</label>
+        <span class="mono pres-note" id="pres-note"></span>
+      </div>
+      <div class="zoom">
+        <button id="z-out" class="icon" title="afastar (−)">−</button>
+        <span class="mono" id="zval">100%</span>
+        <button id="z-in" class="icon" title="aproximar (+)">+</button>
+        <button id="fit" class="ghost small" title="tamanho normal (0)">ajustar</button>
+      </div>
+    </div>
+
+    <div class="tabpane" id="pane-score">
+      <div class="falha" id="score-erro" hidden>
+        <strong>este arquivo não foi lido</strong>
+        <span id="score-erro-why" class="mono"></span>
+        <p class="mono small">a folha abaixo continua sendo o resultado anterior — exportar dela
+          não exporta este arquivo.</p>
+      </div>
+      <div class="score-wrap" id="score-wrap">
+        <div class="empty" id="empty-score">
+          <p>A partitura aparece aqui.</p>
+          <p class="mono small">paleta: bumbo e caixa na voz de baixo · chimel/rides na de cima</p>
+          <p class="mono small">ao tocar, um cursor percorre os compassos · clique na pauta para pular
+            ao compasso, shift+clique para repeti-lo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpane hidden" id="pane-editor">
+      <div class="ed-toolbar">
+        <span class="mono" id="ed-info">0 notas</span>
+        <button id="ed-add" class="ghost small">+ nota no compasso</button>
+        <button id="ed-apply" class="primary small">reescrever partitura</button>
+        <label class="chk inline"><input type="checkbox" id="ed-quant" checked> manter no pulso da grade</label>
+      </div>
+      <div class="ed-grid" id="ed-grid"></div>
+    </div>
+
+    <div class="tabpane hidden" id="pane-audio">
+      <div class="wave-box">
+        <div class="wave-tools" id="wave-tools">
+          <span class="mono" id="w-span" title="janela mostrada agora">janela inteira</span>
+          <button class="icon" id="w-out" type="button" title="afastar (−)">−</button>
+          <button class="icon" id="w-in" type="button" title="aproximar (+)">+</button>
+          <button class="ghost small" id="w-sel" type="button" disabled title="dar zoom na área marcada (arraste com shift)">zoom na seleção</button>
+          <button class="ghost small" id="w-fit" type="button" title="ver a faixa toda (tecla 0)">janela inteira</button>
+          <button class="ghost small" id="w-bar" type="button" title="enquadrar o compasso do cursor">só este compasso</button>
+          <span class="grow"></span>
+          <label class="chk inline" title="a janela acompanha o cursor de reprodução"><input type="checkbox" id="w-follow"> seguir</label>
+          <label class="chk inline" title="envelope a ~1 ms em vez da visão geral"><input type="checkbox" id="w-fino" checked> envelope fino</label>
+          <label class="chk inline"><input type="checkbox" id="w-curvas" checked> novidade por banda</label>
+          <label class="chk inline"><input type="checkbox" id="w-notas" checked> o que foi gravado</label>
+        </div>
+        <canvas id="wave" width="1600" height="320"></canvas>
+        <p class="hint" id="w-read">arraste para navegar · <span class="mono">shift</span>+arraste marca uma região ·
+          roda do mouse aproxima · clique posiciona o cursor · <span class="mono">−</span>
+          <span class="mono">+</span> <span class="mono">0</span> são os atalhos</p>
+        <p class="hint warn" id="w-note" hidden></p>
+      </div>
+      <div class="lane-legend" id="legend"></div>
+      <p class="hint small">As três faixas são o mesmo instante do arquivo: em cima, a forma de onda;
+        no meio, a <b>novidade espectral</b> que o detector usou por banda (grave/média/aguda e o
+        máximo global); embaixo, <b>o que a partitura gravou</b> — tique cheio = nota escrita, tique
+        oco = ataque detectado que não virou nota. Se a marca oca bater com um pico alto, a leitura
+        está cortando golpe; se a cheia bater no silêncio, está inventando.</p>
+    </div>
+
+    <div class="tabpane hidden" id="pane-midi">
+      <div class="roll-box">
+        <div class="wave-tools">
+          <span class="mono" id="m-sum">sem MIDI ainda</span>
+          <button class="ghost small" id="m-refresh" type="button">reler o arquivo</button>
+          <button class="ghost small" data-fmt="mid" id="m-dl" type="button">baixar .mid</button>
+          <span class="grow"></span>
+          <span class="mono" id="m-note"></span>
+        </div>
+        <canvas id="roll" width="1600" height="380"></canvas>
+        <p class="hint">piano-roll lido <b>do arquivo .mid gerado</b> (parser próprio do
+          <span class="mono">qa</span>, nota a nota, com a duração dos note-off) — não é o nosso
+          dicionário. A janela é a mesma da aba Áudio: o que está aqui é o que a pauta escreveu.
+          Clique numa nota para mover o cursor.</p>
+      </div>
+    </div>
+
+    <div class="tabpane hidden" id="pane-relatorio">
+      <div id="report" class="report"></div>
+    </div>
+
+    <div class="tabpane hidden" id="pane-auditoria">
+      <div class="qa">
+        <div class="qa-bar">
+          <label class="qa-opt" title="reler MIDI/PDF, ida e volta da síntese e cobertura por oráculo">
+            <input type="checkbox" id="qa-full"> verificação completa (mais lenta)
+          </label>
+          <button class="btn small" id="qa-run">Re-auditar</button>
+          <button class="btn small primary" id="qa-fix" disabled>Aplicar correções automáticas</button>
+          <button class="btn small" id="qa-dl" disabled>Baixar relatório (.md)</button>
+          <span class="qa-sum mono" id="qa-sum">sem auditoria ainda</span>
+        </div>
+        <p class="qa-note">
+          Cada grandeza é medida <b>duas vezes por caminhos independentes</b> — o cálculo do
+          pipeline e um oráculo refeito aqui (envelope RMS por autocorrelação, releitura do
+          MusicXML/MIDI/PDF com parsers próprios, síntese da partitura para ouvir de volta) — e
+          as leis de escrita da pauta são checadas sem olhar o áudio. O agente aplica apenas o que
+          é determinístico, re-audita em cima e <b>reverte</b> o que não melhorar o quadro.
+          Nenhum achado é escondido: o que não tem reparo automático fica marcado
+          <span class="tag manual">DECIDIR</span> com a evidência numérica.
+        </p>
+        <div id="qa-body"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="busy" id="busy" hidden style="display:none"><div class="busy-box"><div class="spin"></div><p id="busy-msg">analisando…</p><button class="btn small" id="busy-hide" type="button" title="a operação continua em segundo plano">ocultar</button></div></div>
+<script src="static/app.js?v={{VER}}"></script>
+<script>
+/* cão de guarda: se o app.js não chegou a rodar (cache antigo, arquivo bloqueado, erro de
+   parse), o mínimo vital — tirar o véu e devolver os cliques à página — acontece aqui mesmo. */
+setTimeout(function () {
+  if (window.__drumscribe_ready) return;
+  var b = document.getElementById("busy");
+  if (b) { b.hidden = true; b.style.display = "none"; }
+  var st = document.getElementById("status");
+  if (st && !String(st.textContent).trim()) {
+    st.textContent = "a interface não iniciou: recarregue sem cache (Ctrl+Shift+R) e confira " +
+                     "/api/health — se o servidor caiu, rode ./run.sh de novo.";
+  }
+}, 2500);
+</script>
+</body>
+</html>

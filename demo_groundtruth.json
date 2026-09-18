@@ -1,0 +1,1662 @@
+{
+ "bpm": 100.0,
+ "meter": "4/4",
+ "sr": 44100,
+ "sec_per_beat": 0.6,
+ "ticks_per_quarter": 8,
+ "ticks_per_bar": 32,
+ "events": [
+  {
+   "time": 0.0,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 0,
+   "tick": 0
+  },
+  {
+   "time": 0.0,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 0,
+   "tick": 0
+  },
+  {
+   "time": 1.2,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 0,
+   "tick": 16
+  },
+  {
+   "time": 1.65,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 0,
+   "tick": 22
+  },
+  {
+   "time": 0.6,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 0,
+   "tick": 8
+  },
+  {
+   "time": 1.7999999999999998,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 0,
+   "tick": 24
+  },
+  {
+   "time": 0.0,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 0,
+   "tick": 0
+  },
+  {
+   "time": 0.3,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 0,
+   "tick": 4
+  },
+  {
+   "time": 0.6,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 0,
+   "tick": 8
+  },
+  {
+   "time": 0.8999999999999999,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 0,
+   "tick": 12
+  },
+  {
+   "time": 1.2,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 0,
+   "tick": 16
+  },
+  {
+   "time": 1.5,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 0,
+   "tick": 20
+  },
+  {
+   "time": 1.7999999999999998,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 0,
+   "tick": 24
+  },
+  {
+   "time": 2.1,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 0,
+   "tick": 28
+  },
+  {
+   "time": 2.4,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 1,
+   "tick": 0
+  },
+  {
+   "time": 2.4,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 1,
+   "tick": 0
+  },
+  {
+   "time": 3.5999999999999996,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 1,
+   "tick": 16
+  },
+  {
+   "time": 4.05,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 1,
+   "tick": 22
+  },
+  {
+   "time": 3.0,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 1,
+   "tick": 8
+  },
+  {
+   "time": 4.2,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 1,
+   "tick": 24
+  },
+  {
+   "time": 2.4,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 1,
+   "tick": 0
+  },
+  {
+   "time": 2.6999999999999997,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 1,
+   "tick": 4
+  },
+  {
+   "time": 3.0,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 1,
+   "tick": 8
+  },
+  {
+   "time": 3.3,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 1,
+   "tick": 12
+  },
+  {
+   "time": 3.5999999999999996,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 1,
+   "tick": 16
+  },
+  {
+   "time": 3.9,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 1,
+   "tick": 20
+  },
+  {
+   "time": 4.2,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 1,
+   "tick": 24
+  },
+  {
+   "time": 4.5,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 1,
+   "tick": 28
+  },
+  {
+   "time": 4.8,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 2,
+   "tick": 0
+  },
+  {
+   "time": 4.8,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 2,
+   "tick": 0
+  },
+  {
+   "time": 6.0,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 2,
+   "tick": 16
+  },
+  {
+   "time": 6.45,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 2,
+   "tick": 22
+  },
+  {
+   "time": 5.3999999999999995,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 2,
+   "tick": 8
+  },
+  {
+   "time": 6.6,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 2,
+   "tick": 24
+  },
+  {
+   "time": 4.8,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 2,
+   "tick": 0
+  },
+  {
+   "time": 5.1,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 2,
+   "tick": 4
+  },
+  {
+   "time": 5.3999999999999995,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 2,
+   "tick": 8
+  },
+  {
+   "time": 5.7,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 2,
+   "tick": 12
+  },
+  {
+   "time": 6.0,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 2,
+   "tick": 16
+  },
+  {
+   "time": 6.3,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 2,
+   "tick": 20
+  },
+  {
+   "time": 6.6,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 2,
+   "tick": 24
+  },
+  {
+   "time": 6.8999999999999995,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 2,
+   "tick": 28
+  },
+  {
+   "time": 7.199999999999999,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 3,
+   "tick": 0
+  },
+  {
+   "time": 7.199999999999999,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 3,
+   "tick": 0
+  },
+  {
+   "time": 8.4,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 3,
+   "tick": 16
+  },
+  {
+   "time": 8.85,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 3,
+   "tick": 22
+  },
+  {
+   "time": 7.8,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 3,
+   "tick": 8
+  },
+  {
+   "time": 9.0,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 3,
+   "tick": 24
+  },
+  {
+   "time": 7.199999999999999,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 3,
+   "tick": 0
+  },
+  {
+   "time": 7.5,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 3,
+   "tick": 4
+  },
+  {
+   "time": 7.8,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 3,
+   "tick": 8
+  },
+  {
+   "time": 8.1,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 3,
+   "tick": 12
+  },
+  {
+   "time": 8.4,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 3,
+   "tick": 16
+  },
+  {
+   "time": 8.7,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 3,
+   "tick": 20
+  },
+  {
+   "time": 9.0,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 3,
+   "tick": 24
+  },
+  {
+   "time": 9.299999999999999,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 3,
+   "tick": 28
+  },
+  {
+   "time": 9.6,
+   "lane": "kick",
+   "velocity": 112,
+   "bar": 4,
+   "tick": 0
+  },
+  {
+   "time": 10.049999999999999,
+   "lane": "kick",
+   "velocity": 84,
+   "bar": 4,
+   "tick": 6
+  },
+  {
+   "time": 10.799999999999999,
+   "lane": "kick",
+   "velocity": 104,
+   "bar": 4,
+   "tick": 16
+  },
+  {
+   "time": 11.1,
+   "lane": "kick",
+   "velocity": 76,
+   "bar": 4,
+   "tick": 20
+  },
+  {
+   "time": 10.2,
+   "lane": "snare",
+   "velocity": 114,
+   "bar": 4,
+   "tick": 8
+  },
+  {
+   "time": 10.65,
+   "lane": "snare",
+   "velocity": 38,
+   "bar": 4,
+   "tick": 14
+  },
+  {
+   "time": 11.4,
+   "lane": "snare",
+   "velocity": 118,
+   "bar": 4,
+   "tick": 24
+  },
+  {
+   "time": 11.625,
+   "lane": "snare",
+   "velocity": 34,
+   "bar": 4,
+   "tick": 27
+  },
+  {
+   "time": 9.6,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 4,
+   "tick": 0
+  },
+  {
+   "time": 9.75,
+   "lane": "hat",
+   "velocity": 52,
+   "bar": 4,
+   "tick": 2
+  },
+  {
+   "time": 9.9,
+   "lane": "hat",
+   "velocity": 62,
+   "bar": 4,
+   "tick": 4
+  },
+  {
+   "time": 10.049999999999999,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 4,
+   "tick": 6
+  },
+  {
+   "time": 10.2,
+   "lane": "hat",
+   "velocity": 86,
+   "bar": 4,
+   "tick": 8
+  },
+  {
+   "time": 10.35,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 4,
+   "tick": 10
+  },
+  {
+   "time": 10.5,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 4,
+   "tick": 12
+  },
+  {
+   "time": 10.65,
+   "lane": "hat",
+   "velocity": 48,
+   "bar": 4,
+   "tick": 14
+  },
+  {
+   "time": 10.799999999999999,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 4,
+   "tick": 16
+  },
+  {
+   "time": 10.95,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 4,
+   "tick": 18
+  },
+  {
+   "time": 11.1,
+   "lane": "hat",
+   "velocity": 62,
+   "bar": 4,
+   "tick": 20
+  },
+  {
+   "time": 11.25,
+   "lane": "hat",
+   "velocity": 48,
+   "bar": 4,
+   "tick": 22
+  },
+  {
+   "time": 11.4,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 4,
+   "tick": 24
+  },
+  {
+   "time": 11.549999999999999,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 4,
+   "tick": 26
+  },
+  {
+   "time": 11.7,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 4,
+   "tick": 28
+  },
+  {
+   "time": 11.85,
+   "lane": "hat_open",
+   "velocity": 84,
+   "bar": 4,
+   "tick": 30
+  },
+  {
+   "time": 12.0,
+   "lane": "kick",
+   "velocity": 112,
+   "bar": 5,
+   "tick": 0
+  },
+  {
+   "time": 12.45,
+   "lane": "kick",
+   "velocity": 84,
+   "bar": 5,
+   "tick": 6
+  },
+  {
+   "time": 13.2,
+   "lane": "kick",
+   "velocity": 104,
+   "bar": 5,
+   "tick": 16
+  },
+  {
+   "time": 13.5,
+   "lane": "kick",
+   "velocity": 76,
+   "bar": 5,
+   "tick": 20
+  },
+  {
+   "time": 12.6,
+   "lane": "snare",
+   "velocity": 114,
+   "bar": 5,
+   "tick": 8
+  },
+  {
+   "time": 13.049999999999999,
+   "lane": "snare",
+   "velocity": 38,
+   "bar": 5,
+   "tick": 14
+  },
+  {
+   "time": 13.799999999999999,
+   "lane": "snare",
+   "velocity": 118,
+   "bar": 5,
+   "tick": 24
+  },
+  {
+   "time": 14.025,
+   "lane": "snare",
+   "velocity": 34,
+   "bar": 5,
+   "tick": 27
+  },
+  {
+   "time": 12.0,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 5,
+   "tick": 0
+  },
+  {
+   "time": 12.15,
+   "lane": "hat",
+   "velocity": 52,
+   "bar": 5,
+   "tick": 2
+  },
+  {
+   "time": 12.299999999999999,
+   "lane": "hat",
+   "velocity": 62,
+   "bar": 5,
+   "tick": 4
+  },
+  {
+   "time": 12.45,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 5,
+   "tick": 6
+  },
+  {
+   "time": 12.6,
+   "lane": "hat",
+   "velocity": 86,
+   "bar": 5,
+   "tick": 8
+  },
+  {
+   "time": 12.75,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 5,
+   "tick": 10
+  },
+  {
+   "time": 12.9,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 5,
+   "tick": 12
+  },
+  {
+   "time": 13.049999999999999,
+   "lane": "hat",
+   "velocity": 48,
+   "bar": 5,
+   "tick": 14
+  },
+  {
+   "time": 13.2,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 5,
+   "tick": 16
+  },
+  {
+   "time": 13.35,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 5,
+   "tick": 18
+  },
+  {
+   "time": 13.5,
+   "lane": "hat",
+   "velocity": 62,
+   "bar": 5,
+   "tick": 20
+  },
+  {
+   "time": 13.65,
+   "lane": "hat",
+   "velocity": 48,
+   "bar": 5,
+   "tick": 22
+  },
+  {
+   "time": 13.799999999999999,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 5,
+   "tick": 24
+  },
+  {
+   "time": 13.95,
+   "lane": "hat",
+   "velocity": 50,
+   "bar": 5,
+   "tick": 26
+  },
+  {
+   "time": 14.1,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 5,
+   "tick": 28
+  },
+  {
+   "time": 14.25,
+   "lane": "hat_open",
+   "velocity": 84,
+   "bar": 5,
+   "tick": 30
+  },
+  {
+   "time": 14.399999999999999,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 6,
+   "tick": 0
+  },
+  {
+   "time": 14.399999999999999,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 6,
+   "tick": 0
+  },
+  {
+   "time": 15.6,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 6,
+   "tick": 16
+  },
+  {
+   "time": 16.05,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 6,
+   "tick": 22
+  },
+  {
+   "time": 15.0,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 6,
+   "tick": 8
+  },
+  {
+   "time": 16.2,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 6,
+   "tick": 24
+  },
+  {
+   "time": 14.399999999999999,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 6,
+   "tick": 0
+  },
+  {
+   "time": 14.7,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 6,
+   "tick": 4
+  },
+  {
+   "time": 15.0,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 6,
+   "tick": 8
+  },
+  {
+   "time": 15.299999999999999,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 6,
+   "tick": 12
+  },
+  {
+   "time": 15.6,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 6,
+   "tick": 16
+  },
+  {
+   "time": 15.899999999999999,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 6,
+   "tick": 20
+  },
+  {
+   "time": 16.2,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 6,
+   "tick": 24
+  },
+  {
+   "time": 16.5,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 6,
+   "tick": 28
+  },
+  {
+   "time": 16.8,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 7,
+   "tick": 0
+  },
+  {
+   "time": 16.8,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 7,
+   "tick": 0
+  },
+  {
+   "time": 18.0,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 7,
+   "tick": 16
+  },
+  {
+   "time": 18.45,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 7,
+   "tick": 22
+  },
+  {
+   "time": 17.4,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 7,
+   "tick": 8
+  },
+  {
+   "time": 18.599999999999998,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 7,
+   "tick": 24
+  },
+  {
+   "time": 16.8,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 7,
+   "tick": 0
+  },
+  {
+   "time": 17.099999999999998,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 7,
+   "tick": 4
+  },
+  {
+   "time": 17.4,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 7,
+   "tick": 8
+  },
+  {
+   "time": 17.7,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 7,
+   "tick": 12
+  },
+  {
+   "time": 18.0,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 7,
+   "tick": 16
+  },
+  {
+   "time": 18.3,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 7,
+   "tick": 20
+  },
+  {
+   "time": 18.599999999999998,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 7,
+   "tick": 24
+  },
+  {
+   "time": 18.9,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 7,
+   "tick": 28
+  },
+  {
+   "time": 19.2,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 8,
+   "tick": 0
+  },
+  {
+   "time": 19.5,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 8,
+   "tick": 4
+  },
+  {
+   "time": 19.8,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 8,
+   "tick": 8
+  },
+  {
+   "time": 20.099999999999998,
+   "lane": "ride",
+   "velocity": 72,
+   "bar": 8,
+   "tick": 12
+  },
+  {
+   "time": 20.4,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 8,
+   "tick": 16
+  },
+  {
+   "time": 20.7,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 8,
+   "tick": 20
+  },
+  {
+   "time": 21.0,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 8,
+   "tick": 24
+  },
+  {
+   "time": 19.2,
+   "lane": "kick",
+   "velocity": 110,
+   "bar": 8,
+   "tick": 0
+  },
+  {
+   "time": 20.55,
+   "lane": "kick",
+   "velocity": 90,
+   "bar": 8,
+   "tick": 18
+  },
+  {
+   "time": 19.8,
+   "lane": "snare",
+   "velocity": 112,
+   "bar": 8,
+   "tick": 8
+  },
+  {
+   "time": 21.0,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 8,
+   "tick": 24
+  },
+  {
+   "time": 19.8,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 8,
+   "tick": 8
+  },
+  {
+   "time": 21.0,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 8,
+   "tick": 24
+  },
+  {
+   "time": 21.599999999999998,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 9,
+   "tick": 0
+  },
+  {
+   "time": 21.9,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 9,
+   "tick": 4
+  },
+  {
+   "time": 22.2,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 9,
+   "tick": 8
+  },
+  {
+   "time": 22.5,
+   "lane": "ride",
+   "velocity": 72,
+   "bar": 9,
+   "tick": 12
+  },
+  {
+   "time": 22.8,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 9,
+   "tick": 16
+  },
+  {
+   "time": 23.099999999999998,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 9,
+   "tick": 20
+  },
+  {
+   "time": 23.4,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 9,
+   "tick": 24
+  },
+  {
+   "time": 21.599999999999998,
+   "lane": "kick",
+   "velocity": 110,
+   "bar": 9,
+   "tick": 0
+  },
+  {
+   "time": 22.95,
+   "lane": "kick",
+   "velocity": 90,
+   "bar": 9,
+   "tick": 18
+  },
+  {
+   "time": 22.2,
+   "lane": "snare",
+   "velocity": 112,
+   "bar": 9,
+   "tick": 8
+  },
+  {
+   "time": 23.4,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 9,
+   "tick": 24
+  },
+  {
+   "time": 22.2,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 9,
+   "tick": 8
+  },
+  {
+   "time": 23.4,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 9,
+   "tick": 24
+  },
+  {
+   "time": 24.0,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 10,
+   "tick": 0
+  },
+  {
+   "time": 24.3,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 10,
+   "tick": 4
+  },
+  {
+   "time": 24.599999999999998,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 10,
+   "tick": 8
+  },
+  {
+   "time": 24.9,
+   "lane": "ride",
+   "velocity": 72,
+   "bar": 10,
+   "tick": 12
+  },
+  {
+   "time": 25.2,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 10,
+   "tick": 16
+  },
+  {
+   "time": 25.5,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 10,
+   "tick": 20
+  },
+  {
+   "time": 25.8,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 10,
+   "tick": 24
+  },
+  {
+   "time": 24.0,
+   "lane": "kick",
+   "velocity": 110,
+   "bar": 10,
+   "tick": 0
+  },
+  {
+   "time": 25.349999999999998,
+   "lane": "kick",
+   "velocity": 90,
+   "bar": 10,
+   "tick": 18
+  },
+  {
+   "time": 24.599999999999998,
+   "lane": "snare",
+   "velocity": 112,
+   "bar": 10,
+   "tick": 8
+  },
+  {
+   "time": 25.8,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 10,
+   "tick": 24
+  },
+  {
+   "time": 24.599999999999998,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 10,
+   "tick": 8
+  },
+  {
+   "time": 25.8,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 10,
+   "tick": 24
+  },
+  {
+   "time": 26.4,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 11,
+   "tick": 0
+  },
+  {
+   "time": 26.7,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 11,
+   "tick": 4
+  },
+  {
+   "time": 27.0,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 11,
+   "tick": 8
+  },
+  {
+   "time": 27.3,
+   "lane": "ride",
+   "velocity": 72,
+   "bar": 11,
+   "tick": 12
+  },
+  {
+   "time": 27.599999999999998,
+   "lane": "ride",
+   "velocity": 100,
+   "bar": 11,
+   "tick": 16
+  },
+  {
+   "time": 27.9,
+   "lane": "ride",
+   "velocity": 74,
+   "bar": 11,
+   "tick": 20
+  },
+  {
+   "time": 28.2,
+   "lane": "ride",
+   "velocity": 92,
+   "bar": 11,
+   "tick": 24
+  },
+  {
+   "time": 26.4,
+   "lane": "kick",
+   "velocity": 110,
+   "bar": 11,
+   "tick": 0
+  },
+  {
+   "time": 27.75,
+   "lane": "kick",
+   "velocity": 90,
+   "bar": 11,
+   "tick": 18
+  },
+  {
+   "time": 27.0,
+   "lane": "snare",
+   "velocity": 112,
+   "bar": 11,
+   "tick": 8
+  },
+  {
+   "time": 28.2,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 11,
+   "tick": 24
+  },
+  {
+   "time": 27.0,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 11,
+   "tick": 8
+  },
+  {
+   "time": 28.2,
+   "lane": "hat_foot",
+   "velocity": 72,
+   "bar": 11,
+   "tick": 24
+  },
+  {
+   "time": 28.799999999999997,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 12,
+   "tick": 0
+  },
+  {
+   "time": 28.799999999999997,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 12,
+   "tick": 0
+  },
+  {
+   "time": 30.0,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 12,
+   "tick": 16
+  },
+  {
+   "time": 30.45,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 12,
+   "tick": 22
+  },
+  {
+   "time": 29.4,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 12,
+   "tick": 8
+  },
+  {
+   "time": 30.599999999999998,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 12,
+   "tick": 24
+  },
+  {
+   "time": 28.799999999999997,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 12,
+   "tick": 0
+  },
+  {
+   "time": 29.099999999999998,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 12,
+   "tick": 4
+  },
+  {
+   "time": 29.4,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 12,
+   "tick": 8
+  },
+  {
+   "time": 29.7,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 12,
+   "tick": 12
+  },
+  {
+   "time": 30.0,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 12,
+   "tick": 16
+  },
+  {
+   "time": 30.299999999999997,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 12,
+   "tick": 20
+  },
+  {
+   "time": 30.599999999999998,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 12,
+   "tick": 24
+  },
+  {
+   "time": 30.9,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 12,
+   "tick": 28
+  },
+  {
+   "time": 31.2,
+   "lane": "crash",
+   "velocity": 118,
+   "bar": 13,
+   "tick": 0
+  },
+  {
+   "time": 31.2,
+   "lane": "kick",
+   "velocity": 118,
+   "bar": 13,
+   "tick": 0
+  },
+  {
+   "time": 32.4,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 13,
+   "tick": 16
+  },
+  {
+   "time": 32.85,
+   "lane": "kick",
+   "velocity": 92,
+   "bar": 13,
+   "tick": 22
+  },
+  {
+   "time": 31.799999999999997,
+   "lane": "snare",
+   "velocity": 116,
+   "bar": 13,
+   "tick": 8
+  },
+  {
+   "time": 33.0,
+   "lane": "snare",
+   "velocity": 120,
+   "bar": 13,
+   "tick": 24
+  },
+  {
+   "time": 31.2,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 13,
+   "tick": 0
+  },
+  {
+   "time": 31.5,
+   "lane": "hat",
+   "velocity": 60,
+   "bar": 13,
+   "tick": 4
+  },
+  {
+   "time": 31.799999999999997,
+   "lane": "hat",
+   "velocity": 88,
+   "bar": 13,
+   "tick": 8
+  },
+  {
+   "time": 32.1,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 13,
+   "tick": 12
+  },
+  {
+   "time": 32.4,
+   "lane": "hat",
+   "velocity": 90,
+   "bar": 13,
+   "tick": 16
+  },
+  {
+   "time": 32.699999999999996,
+   "lane": "hat",
+   "velocity": 58,
+   "bar": 13,
+   "tick": 20
+  },
+  {
+   "time": 33.0,
+   "lane": "hat",
+   "velocity": 92,
+   "bar": 13,
+   "tick": 24
+  },
+  {
+   "time": 33.3,
+   "lane": "hat",
+   "velocity": 56,
+   "bar": 13,
+   "tick": 28
+  },
+  {
+   "time": 33.6,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 14,
+   "tick": 0
+  },
+  {
+   "time": 34.199999999999996,
+   "lane": "snare",
+   "velocity": 112,
+   "bar": 14,
+   "tick": 8
+  },
+  {
+   "time": 35.4,
+   "lane": "snare",
+   "velocity": 114,
+   "bar": 14,
+   "tick": 24
+  },
+  {
+   "time": 33.6,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 0
+  },
+  {
+   "time": 33.9,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 4
+  },
+  {
+   "time": 34.199999999999996,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 8
+  },
+  {
+   "time": 34.5,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 12
+  },
+  {
+   "time": 34.8,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 16
+  },
+  {
+   "time": 35.1,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 20
+  },
+  {
+   "time": 35.4,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 24
+  },
+  {
+   "time": 35.699999999999996,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 14,
+   "tick": 28
+  },
+  {
+   "time": 35.85,
+   "lane": "tom_hi",
+   "velocity": 100,
+   "bar": 14,
+   "tick": 30
+  },
+  {
+   "time": 36.0,
+   "lane": "kick",
+   "velocity": 108,
+   "bar": 15,
+   "tick": 0
+  },
+  {
+   "time": 36.6,
+   "lane": "snare",
+   "velocity": 112,
+   "bar": 15,
+   "tick": 8
+  },
+  {
+   "time": 37.8,
+   "lane": "snare",
+   "velocity": 114,
+   "bar": 15,
+   "tick": 24
+  },
+  {
+   "time": 36.0,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 0
+  },
+  {
+   "time": 36.3,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 4
+  },
+  {
+   "time": 36.6,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 8
+  },
+  {
+   "time": 36.9,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 12
+  },
+  {
+   "time": 37.199999999999996,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 16
+  },
+  {
+   "time": 37.5,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 20
+  },
+  {
+   "time": 37.8,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 24
+  },
+  {
+   "time": 38.1,
+   "lane": "hat",
+   "velocity": 80,
+   "bar": 15,
+   "tick": 28
+  },
+  {
+   "time": 38.25,
+   "lane": "tom_hi",
+   "velocity": 100,
+   "bar": 15,
+   "tick": 30
+  }
+ ]
+}

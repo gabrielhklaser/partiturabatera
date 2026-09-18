@@ -1,0 +1,13 @@
+# Núcleo numérico / DSP
+numpy>=1.24
+scipy>=1.10
+soundfile>=0.12          # leitura de WAV/FLAC/OGG
+miniaudio>=1.59         # decodificação de MP3/AAC/M4A sem depender de ffmpeg
+imageio-ffmpeg>=0.4.9   # decodificador de reserva (usado só se miniaudio/soundfile falharem)
+
+# Exportações
+reportlab>=4.0          # PDF (gravura própria, sem LilyPond)
+pypdfium2>=4.20         # só a Auditoria usa: reconstrói a matriz de amostras do PDF para T13
+
+# Servidor
+flask>=3.0

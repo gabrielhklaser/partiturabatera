@@ -1,0 +1,11 @@
+# artefactos de execução — criados pelo servidor, não pertencem ao repositório
+out/
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# a faixa real que o usuário subiu para teste: não é ativo do projeto, e não é
+# para publicar num repositório público. `git add -f samples/exemplo.mp3` se quiser
+samples/exemplo.mp3

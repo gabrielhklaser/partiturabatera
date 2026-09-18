@@ -1,0 +1,20 @@
+partiturabatera: transcrição de bateria isolada em partitura, feita à mão
+
+Plataforma simples: sobe o MP3 de uma faixa isolada de bateria, sai partitura de
+bateria simples, com PDF. Sem modelo pré-treinado e sem rede neural — o caminho é
+escrito e legível: detecção de ataque por banda, fusão, classificação de peça,
+grade de andamento/métrica, quantização e as leis de gravura (voz, haste, ligadura,
+pausa de compasso, dynamically, adorno de flam).
+
+- pipeline: plano DSP com escada de memória, corte de silêncio com o lead declarado
+  (trim_lead_ms), refinamento de ataque, promoção de 32º individual e anunciada
+- exportações: PDF, MusicXML, MIDI e JSON/CSV — ocultar pratos é apresentação, os
+  dados ficam inteiros (lei T10p declara o corte)
+- Auditoria (`drumscribe/qa.py`): 28 leis relidas do arquivo escrito (SMF próprio,
+  MusicXML reparse, SVG/PDF), com auto-reparo que nunca move nota nem entrega escore
+  que audite pior; `tests/doublecheck.py` fura a partitura de propósito para provar
+  que o verificador vê
+- interface em português com editor de correção, zoom sobre a forma de onda com as
+  marcações por cima, visão MIDI e aba de relatório; `run.sh` instala o que falta
+- docs/ERROS.md: os 24 erros confirmados com a medição que os fechou, as limitações
+  assumidas e os riscos operacionais do próprio repositório

@@ -1,0 +1,16 @@
+{
+ "threshold": 7.5,
+ "separation": 13825.1,
+ "gray_zone_below_threshold": [
+  "pad_minus30",
+  "pad_minus26",
+  "voz_minus26"
+ ],
+ "drums_only": 64701.54,
+ "pad_minus30": 17.59,
+ "pad_minus26": 8.79,
+ "pad_minus20": 4.68,
+ "voz_minus26": 7.85,
+ "voz_minus18": 2.9,
+ "note": "limiar = 1,6× o pior caso de colchão audível (−20 dB relativo). dyn medido em arquivo sintético com silêncio digital entre golpes é ordens de grandeza maior que qualquer gravação real; por isso o limiar é deliberadamente baixo e só acusa colchão forte o bastante para virar golpe espúrio."
+}
